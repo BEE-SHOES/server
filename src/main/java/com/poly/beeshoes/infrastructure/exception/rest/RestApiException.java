@@ -1,6 +1,5 @@
 package com.poly.beeshoes.infrastructure.exception.rest;
 
-
 import com.poly.beeshoes.infrastructure.constant.Message;
 
 /**
