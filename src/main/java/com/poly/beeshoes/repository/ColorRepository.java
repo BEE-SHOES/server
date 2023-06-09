@@ -1,14 +1,14 @@
 package com.poly.beeshoes.repository;
 
-import com.poly.beeshoes.entity.Bill;
+import com.poly.beeshoes.entity.Color;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
  * @author thangncph26123
  */
-@Repository(BillRepository.NAME)
-public interface BillRepository extends JpaRepository<Bill, String> {
+@Repository(ColorRepository.NAME)
+public interface ColorRepository extends JpaRepository<Color, String> {
 
-    String NAME = "BaseBillRepository";
+    String NAME = "BaseColorRepository";
 }

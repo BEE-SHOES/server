@@ -1,6 +1,7 @@
 package com.poly.beeshoes.infrastructure.listener;
 
 import com.poly.beeshoes.entity.base.AuditEntity;
+import com.poly.beeshoes.infrastructure.constant.Constants;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 
@@ -13,13 +14,17 @@ public class AuditEntityListener {
 
     @PrePersist
     private void onCreate(AuditEntity entity) {
-        entity.setCreatedDate(getCurrentTime());
-        entity.setLastModifiedDate(getCurrentTime());
+        String id = Constants.ID_USER;
+        entity.setCreatedAt(getCurrentTime());
+        entity.setUpdatedAt(getCurrentTime());
+        entity.setDeleted(0);
+        entity.setCreatedBy(id);
+        entity.setUpdatedBy(id);
     }
 
     @PreUpdate
     private void onUpdate(AuditEntity entity) {
-        entity.setLastModifiedDate(getCurrentTime());
+        entity.setUpdatedAt(getCurrentTime());
     }
 
     private long getCurrentTime() {

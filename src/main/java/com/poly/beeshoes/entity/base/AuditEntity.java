@@ -18,9 +18,18 @@ import lombok.Setter;
 public abstract class AuditEntity {
 
     @Column(updatable = false)
-    private Long createdDate;
+    private Long createdAt; // Thời gian tạo
 
     @Column
-    private Long lastModifiedDate;
+    private Long updatedAt; // Thời gian cập nhật gần nhất
+
+    @Column
+    private Integer deleted; // Trạng thái xóa
+
+    @Column(updatable = false)
+    private String createdBy; // Người tạo
+
+    @Column
+    private String updatedBy; // Người cập nhật gần nhất
 
 }
