@@ -1,4 +1,4 @@
-package com.poly.beeshoes.core.common.base;//package com.portalprojects.core.common.base;
+package com.poly.beeshoes.core.common.base;
 //
 //import com.fpolydatn.infrastructure.session.FpolyDatnSession;
 //import org.springframework.beans.factory.annotation.Autowired;
