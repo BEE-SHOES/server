@@ -34,5 +34,5 @@ public class PointAddHistory extends PrimaryEntity {
     private Bill bill;
 
     @Column
-    private Integer accumulatedPoints;
+    private Integer accumulatedPoints; // điểm tích được ở hóa đơn
 }
