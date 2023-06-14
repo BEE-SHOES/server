@@ -24,7 +24,7 @@ import org.hibernate.annotations.Nationalized;
 @Table(name = "sole_height") // Độ cao của đế giày
 public class SoleHeight extends PrimaryEntity {
 
-    @Column(length = EntityProperties.LENGTH_CODE)
+    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
     private String code;
 
     @Column(length = EntityProperties.LENGTH_NAME)

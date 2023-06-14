@@ -45,7 +45,7 @@ public class Bill extends PrimaryEntity {
     @JoinColumn(name = "customer_information_id")
     private CustomerInformation customerInformation; // Thông tin địa chỉ khách hàng
 
-    @Column(length = EntityProperties.LENGTH_CODE)
+    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
     private String code; // Mã hóa đơn
 
     @Column

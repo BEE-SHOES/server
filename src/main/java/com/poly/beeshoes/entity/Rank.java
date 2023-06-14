@@ -10,25 +10,25 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Nationalized;
 
 /**
  * @author thangncph26123
  */
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Entity
 @Getter
 @Setter
-@Table(name = "brand") // Thương hiệu
-public class Brand extends PrimaryEntity {
-
-    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
-    private String code; // Mã
+@Table(name = "role") // hạng khách hàng
+public class Rank extends PrimaryEntity {
 
     @Column(length = EntityProperties.LENGTH_NAME)
-    @Nationalized
-    private String name; // Tên
+    private String name;
+
+    @Column
+    private Integer requestPoints;
+
+    @Column
+    private Short percentReduction;
 }

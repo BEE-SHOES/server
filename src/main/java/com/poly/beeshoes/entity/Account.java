@@ -29,7 +29,7 @@ import java.util.Date;
 @Table(name = "account") // Tài khoản
 public class Account extends PrimaryEntity {
 
-    @Column(length = EntityProperties.LENGTH_CODE)
+    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
     private String code; // Mã khách hàng
 
     @Column(length = EntityProperties.LENGTH_NAME)
@@ -39,10 +39,10 @@ public class Account extends PrimaryEntity {
     @Column
     private Date birthDate; // Ngày sinh
 
-    @Column(length = EntityProperties.LENGTH_PHONE)
+    @Column(length = EntityProperties.LENGTH_PHONE, unique = true)
     private String phoneNumber; // Số điện thoại
 
-    @Column(length = EntityProperties.LENGTH_EMAIL)
+    @Column(length = EntityProperties.LENGTH_EMAIL, unique = true)
     private String email; // Email
 
     @Column(length = EntityProperties.LENGTH_PASSWORD)
@@ -51,7 +51,14 @@ public class Account extends PrimaryEntity {
     @Column(length = EntityProperties.LENGTH_DESCRIPTION)
     private String avatar; // Ảnh đại diện
 
+    @Column
+    private Integer point; // Điểm khách hàng
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
     private Role role; // Quyền : Admin, Nhân viên, Khách hàng
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rank_id")
+    private Rank rank; // Rank khách hàng
 }

@@ -26,7 +26,7 @@ import org.hibernate.annotations.Nationalized;
 @Table(name = "promotion") // Khuyến mại
 public class Promotion extends PrimaryEntity {
 
-    @Column(length = EntityProperties.LENGTH_CODE)
+    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
     private String code; // Mã khuyến mại
 
     @Column(length = EntityProperties.LENGTH_NAME)

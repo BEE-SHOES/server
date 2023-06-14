@@ -24,7 +24,7 @@ import org.hibernate.annotations.Nationalized;
 @Table(name = "shoes_collar") // Cổ giày
 public class ShoesCollar extends PrimaryEntity {
 
-    @Column(length = EntityProperties.LENGTH_CODE)
+    @Column(length = EntityProperties.LENGTH_CODE, unique = true)
     private String code;
 
     @Column(length = EntityProperties.LENGTH_NAME)
